@@ -1,14 +1,15 @@
 package one
 
 import (
-	"aoc/helper"
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/adorfman10/advent-of-code/util"
 )
 
 func A() int {
-	input := helper.ReadFile("1/input.txt")
+	input := util.ReadFile("1/input.txt")
 	lines := strings.Split(input, "\n")
 	sum := 0
 	for _, line := range lines {
@@ -38,17 +39,15 @@ var numMap = map[string]string{
 
 func isNumber(s string) (string, error) {
 	for n, ns := range numMap {
-		if len(ns) <= len(s) {
-			if s[0:len(ns)] == ns {
-				return n, nil
-			}
+		if strings.HasPrefix(s, ns) {
+			return n, nil
 		}
 	}
 	return "", fmt.Errorf("not a number")
 }
 
 func B() int {
-	input := helper.ReadFile("1/input.txt")
+	input := util.ReadFile("1/input.txt")
 	lines := strings.Split(input, "\n")
 	sum := 0
 	for _, line := range lines {

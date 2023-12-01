@@ -1,8 +1,9 @@
 package main
 
 import (
-	one "aoc/1"
 	"fmt"
+
+	one "github.com/adorfman10/advent-of-code/1"
 )
 
 func main() {
