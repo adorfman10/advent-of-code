@@ -9,6 +9,8 @@ import (
 )
 
 func A() int {
+	defer util.Duration(util.Track("A"))
+
 	input := util.ReadFile("1/input.txt")
 	lines := strings.Split(input, "\n")
 	sum := 0
@@ -47,6 +49,8 @@ func isNumber(s string) (string, error) {
 }
 
 func B() int {
+	defer util.Duration(util.Track("B"))
+
 	input := util.ReadFile("1/input.txt")
 	lines := strings.Split(input, "\n")
 	sum := 0
